@@ -41,7 +41,7 @@ df_sql = pd.read_sql(query, conn)
 
 # Python (processamento): limpeza + imputação + validação
 df_sql['salary'] = df_sql['salary'].astype(str).str.replace(r'[^\dKk]', '', regex=True)
-df_sql['salary'] = df_sql['salary'].replace({'3k':'3000','None':np.nan}).astype(float)
+df_sql['salary'] = df_sql['salary'].replace({'3k':'3000','None':np.nan,'':np.nan}).astype(float)
 df_sql['salary'] = df_sql.groupby('dept')['salary'].transform(lambda x: x.fillna(x.mean()))
 df_sql = df_sql[(df_sql['salary'] >= 1000) & (df_sql['salary'] <= 100000)]
 
