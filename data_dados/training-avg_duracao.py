@@ -2,7 +2,7 @@
 #  EN: Given a table of international veterinary training sessions with inconsistent "duration" values (some in minutes, some in hours), normalize all durations to hours, calculate the average duration per country, and store the aggregated dataset back into SQL.  
 # PT: Dada uma tabela de sessões internacionais de treinamento veterinário com valores inconsistentes de "duração" (alguns em minutos, outros em horas), normalize todas as durações para horas, calcule a média de duração por país e grave o conjunto de dados agregado novamente em SQL.  
 
-### Solução (SQL → Python → SQL, máx. 10 linhas)  
+### Solução (SQL → Python → SQL)  
 
 import sqlite3, pandas as pd
 con = sqlite3.connect(":memory:")
